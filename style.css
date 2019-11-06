@@ -1,0 +1,37 @@
+* {
+    background-color: skyblue;
+}
+
+body {
+    margin: 0 2%;
+}
+
+.passion {
+color: red;
+}
+
+.firstParagraph {
+    font-family: sans-serif, serif;
+}
+
+h1 {
+    font-family: "Georgia";
+}
+
+#showJavascript {
+    background-color: darkgray;
+}
+
+#redButton {
+    color: black;
+    background-color: red;
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    text-shadow:0px 1px 0px #810e05;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5em 60em;
+}
+
+#numberResult {
+    background-color: darkgray;
+}
