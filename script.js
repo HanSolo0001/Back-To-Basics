@@ -1,6 +1,19 @@
 alert("This is my test.");
 prompt("What do you think of this test?");
 
+// Play audio
+function playSong() {
+    moveAlong.play();
+}
+
+// Stop audio
+function pauseSong() {
+    moveAlong.pause();
+}
+
+// code below another way to play song?
+// document.getElementById("moveAlong").play();
+
 /* var javascript = "This is Javascript";
 function javascript(i=0; i<=5; i++) {
     document.write(javascript);
