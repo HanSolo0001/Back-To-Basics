@@ -35,3 +35,11 @@ h1 {
 #numberResult {
     background-color: darkgray;
 }
+
+#playButton {
+    margin: 2em 0 2em 0;
+}
+
+#pauseButton {
+    margin: 0 1em 0 1em;
+}
