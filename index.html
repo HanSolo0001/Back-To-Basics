@@ -33,7 +33,10 @@
         <audio>
             <source src="huge-bomb.wav" type="audio/wav">
         </audio>
-        <button id="redButton" onclick="bombSound(); redButton()">DO<br> NOT<br> PRESS!</button>
+        <audio>
+            <source src="countdown.wav">
+        </audio>
+        <button id="redButton" onmouseover="countdownHover()" onclick="bombSound(); redButton()">DO<br> NOT<br> PRESS!</button>
     </section>
     <section>
         <span>Enter a number between 0 and 10. That number then will be added to 5. If it is not within this number range, an error will be thrown.</span>
