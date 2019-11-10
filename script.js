@@ -25,6 +25,11 @@ function javascript() {
     document.getElementById("javascript").innerHTML = "This is JavaScript";
 }
 
+function countdownHover() {
+    var countdown = new Audio("countdown.wav");
+    countdown.play();
+}
+
 function bombSound() {
     var bomb = new Audio("huge-bomb.wav");
     bomb.play();
