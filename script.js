@@ -25,7 +25,10 @@ function javascript() {
     document.getElementById("javascript").innerHTML = "This is JavaScript";
 }
 
-
+function bombSound() {
+    var bomb = new Audio("huge-bomb.wav");
+    bomb.play();
+}
 
 function redButton() {
     alert("Don't you know not to press the red button!");
