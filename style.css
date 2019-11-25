@@ -36,10 +36,28 @@ h1 {
     background-color: darkgray;
 }
 
+#playlist {
+    list-style: none;
+}
+
+#playlist li a {
+    color: black;
+    text-decoration: none;
+}
+
+#playlist a:hover {
+    color: darkgray;
+}
+
+#playlist .current-song a {
+    color: blue;
+}
+
+/*
 #playButton {
     margin: 2em 0 2em 0;
 }
 
 #pauseButton {
     margin: 0 1em 0 1em;
-}
+}*/
