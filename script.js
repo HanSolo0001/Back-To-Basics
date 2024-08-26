@@ -3,73 +3,73 @@ prompt("What do you think of this test?");
 
 
 //// Corrected audio player
-//function initAudioPlayer() {
-//        var currentSong = 0;
-//        $("#audioPlayer")[0].src = $("#playlist li a")[0];
-//        $("#playlist li a").click(function(e){
-//            e.preventDefault();
-//            $("#audioPlayer")[0].src = this;
-//            $("#audioPlayer")[0].play();
-//            $("#playlist li").removeClass("current-song");
-//            currentSong = $(this).parent().index();
-//            $(this).parent.addClass("current-song");
-//        });
-//
-//        $("#audioPlayer")[0].addEventListener("ended", function(){
-//            alert("hi");    
-//        });
-//    }
-//
-//$(document).ready(function() {
-//   initAudioPlayer();
-//})
+// function initAudioPlayer() {
+//     var currentSong = 0;
+//     $("#audioPlayer")[0].src = $("#playlist li a")[0];
+//     $("#playlist li a").click(function(e) {
+//         e.preventDefault();
+//         $("#audioPlayer")[0].src = this;
+//         $("#audioPlayer")[0].play();
+//         $("#playlist li").removeClass("current-song");
+//         currentSong = $(this).parent().index();
+//         $(this).parent.addClass("current-song");
+//     });
 
-/* Audio player source code for verification of mine
-function audioPlayer(){
-    var currentSong = 0;
-    $("#audioPlayer")[0].src = $("#playlist li a")[0];
-    $("#audioPlayer")[0].play();
-    $("#playlist li a").click(function(e){
-        e.preventDefault(); 
-        $("#audioPlayer")[0].src = this;
-        $("#audioPlayer")[0].play();
-        $("#playlist li").removeClass("current-song");
-            currentSong = $(this).parent().index();
-        $(this).parent().addClass("current-song");
-    });
-            
-    $("#audioPlayer")[0].addEventListener("ended", function(){
-        currentSong++;
-        if(currentSong == $("#playlist li a").length)
-                currentSong = 0;
-        $("#playlist li").removeClass("current-song");
-        $("#playlist li:eq("+currentSong+")").addClass("current-song");
-        $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
-        $("#audioPlayer")[0].play();
-    });
-}
-*/
+//     $("#audioPlayer")[0].addEventListener("ended", function() {
+//         alert("hi");
+//     });
+// }
+
+// $(document).ready(function() {
+//     initAudioPlayer();
+// })
+
+// Audio player source code for verification of mine
+// function audioPlayer() {
+//     var currentSong = 0;
+//     $("#audioPlayer")[0].src = $("#playlist li a")[0];
+//     $("#audioPlayer")[0].play();
+//     $("#playlist li a").click(function(e) {
+//         e.preventDefault();
+//         $("#audioPlayer")[0].src = this;
+//         $("#audioPlayer")[0].play();
+//         $("#playlist li").removeClass("current-song");
+//         currentSong = $(this).parent().index();
+//         $(this).parent().addClass("current-song");
+//     });
+
+//     $("#audioPlayer")[0].addEventListener("ended", function() {
+//         currentSong++;
+//         if (currentSong == $("#playlist li a").length)
+//             currentSong = 0;
+//         $("#playlist li").removeClass("current-song");
+//         $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+//         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+//         $("#audioPlayer")[0].play();
+//     });
+// }
+
 
 //// Audio player
 function audioPlayer() {
     var currentSong = 0;
     $("#audioPlayer")[0].src = $("#playlist li a")[0];
     $("#audioPlayer")[0].play();
-    $("#playlist li a").click(function(e){
+    $("#playlist li a").click(function(e) {
         e.preventDefault();
         $("#audioPlayer")[0].src = this;
         $("#audioPlayer")[0].play();
         $("#playlist li").removeClass("current-song");
-            currentSong = $(this).parent().index();
+        currentSong = $(this).parent().index();
         $(this).parent().addClass("current-song");
     });
-    
-    $("#audioPlayer")[0].addEventListener("ended", function(){
+
+    $("#audioPlayer")[0].addEventListener("ended", function() {
         currentSong++;
-        if(currentSong == $("#playlist li a").length)
+        if (currentSong == $("#playlist li a").length)
             currentSong = 0;
         $("#playlist li").removeClass("current-song");
-        $("#playlist li:eq("+currentSong+")").addClass("current-song");
+        $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
     });
@@ -78,6 +78,87 @@ function audioPlayer() {
 $(document).ready(function() {
     audioPlayer();
 })
+
+
+
+
+
+
+// Corrected audio player 8/26/24 chatgpt attempt 1
+// function audioPlayer() {
+//     var currentSong = 0;
+//     var audioPlayer = $("#audioPlayer")[0];
+//     audioPlayer.src = $("#playlist li a")[0].href;
+//     audioPlayer.play();
+
+//     $("#playlist li a").click(function(e) {
+//         e.preventDefault(); // Prevent the default link behavior
+//         audioPlayer.src = this.href; // Set the audio source to the link's href
+//         audioPlayer.play();
+//         $("#playlist li").removeClass("current-song");
+//         currentSong = $(this).parent().index();
+//         $(this).parent().addClass("current-song");
+//     });
+
+//     audioPlayer.addEventListener("ended", function() {
+//         currentSong++;
+//         if (currentSong == $("#playlist li a").length) currentSong = 0;
+//         $("#playlist li").removeClass("current-song");
+//         $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+//         audioPlayer.src = $("#playlist li a")[currentSong].href;
+//         audioPlayer.play();
+//     });
+// }
+
+// $(document).ready(function() {
+//     audioPlayer();
+// });
+
+
+
+
+
+
+
+// Corrected audio player 8/26/24 chatgpt attempt 2
+// function audioPlayer() {
+//     var currentSong = 0;
+//     var audioPlayer = document.getElementById("audioPlayer");
+
+//     // Set initial audio source
+//     audioPlayer.src = $("#playlist li a")[0].href;
+//     audioPlayer.play();
+
+//     // Handle click event for playlist items
+//     $("#playlist li a").click(function(e) {
+//         e.preventDefault(); // Prevent the default behavior of the anchor tag
+//         audioPlayer.src = this.href; // Update the audio source to the clicked link's href
+//         audioPlayer.play();
+//         $("#playlist li").removeClass("current-song");
+//         currentSong = $(this).parent().index();
+//         $(this).parent().addClass("current-song");
+//     });
+
+//     // Automatically go to the next song when the current one ends
+//     audioPlayer.addEventListener("ended", function() {
+//         currentSong++;
+//         if (currentSong >= $("#playlist li a").length) currentSong = 0;
+//         $("#playlist li").removeClass("current-song");
+//         $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+//         audioPlayer.src = $("#playlist li a")[currentSong].href;
+//         audioPlayer.play();
+//     });
+// }
+
+// $(document).ready(function() {
+//     audioPlayer();
+// });
+
+
+
+
+
+
 
 
 /*
